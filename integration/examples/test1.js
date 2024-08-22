@@ -28,7 +28,8 @@ describe('my first test', function()
         cy.log(logoelement.text())
     }
     )
-    cy.contains('PROCEED TO CHECKOUT').click()
+    cy.get("a[class*='cart-icon']").click()
+    cy.get('div.action-block:nth-child(2) button').click()
     cy.contains('Place Order').click()
 
     })

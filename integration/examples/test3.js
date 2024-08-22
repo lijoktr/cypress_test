@@ -20,7 +20,7 @@
             }
         
         )
-        cy.get('#autocomplete').should('have.value','India')
+        cy.get('#autocomplete').should('have.value','Austria')
     //visible invisible
     cy.get('#displayed-text').should('be.visible')
     cy.get('#hide-textbox').click()
