@@ -4,3 +4,7 @@
 4. If jquery, first resolve it using .then(function(price))
 5. Navigating to URL -visit
 6. Through command line, cypress runs in headless mode in electron
+
+Mocha Framework error faced
+1. Tried to pass data from json: cy.type() can only accept a string or number. You passed in: 'undefined'
+2. 
