@@ -16,7 +16,7 @@
 Cypress.Commands.add('selectprod', (productname) =>{
 cy.get('h4.card-title').each(($el, index, $list) =>
     {
-        if($el.text().includes('Blackberry'))
+        if($el.text().includes(productname))
         {
             cy.get('button.btn.btn-info').eq(index).click()
 
