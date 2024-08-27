@@ -19,6 +19,12 @@
         cy.get("input[name='name']:nth-child(2)").should('have.attr', 'minlength', 2)
         cy.get("#inlineRadio3").should('be.disabled')
 
+        //shop item
+        cy.get('a[href="/angularpractice/shop"]').click()
+        cy.selectprod('Blackberry')
+
+
+
     })
     })
                                         
