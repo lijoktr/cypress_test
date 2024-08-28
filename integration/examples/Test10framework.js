@@ -3,6 +3,7 @@
     import Productpage from "../Pageobjects/Productpage"
     import Checkoutpage from "../Pageobjects/Checkoutpage"
     import Purchasepage from "../Pageobjects/Purchasepage"
+  
     
 
             describe('framework', function()
@@ -23,7 +24,7 @@
             const checkoutpage = new Checkoutpage()
             const purchasepage = new Purchasepage()
 
-            cy.visit("https://rahulshettyacademy.com/angularpractice/")   
+            cy.visit(Cypress.env('url') + "/angularpractice/")   
             homepage.getnamebox().type(this.data.name)
             homepage.getgender().select(this.data.gender)
             //assert minlength : 2
@@ -62,8 +63,9 @@
             })
             
             checkoutpage.getcheckout().click()
-
+            
             purchasepage.getcountry().type('India')
+            
             purchasepage.getcountryselect().click()
             purchasepage.getterm().click()
             purchasepage.getpurchase().click()
