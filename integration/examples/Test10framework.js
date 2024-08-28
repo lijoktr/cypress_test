@@ -15,7 +15,9 @@
         })
 
         it('framwework part ', function() {
-            
+
+            var sum = 0
+            var total = 0
             const homepage = new Homepage()
             const productpage = new Productpage()
             const checkoutpage = new Checkoutpage()
@@ -39,6 +41,26 @@
             })
 
             productpage.getkart().click()
+            cy.get('tr td:nth-child(4) strong').each(($el, index, $list)=>
+            {
+                const value = $el.text()
+                var res = value.split(" ")
+                res = res[1].trim()
+                sum = Number(sum) + Number(res)
+            }).then(function()
+        {
+            cy.log(sum)
+
+        })
+        cy.get('h3 strong').each(($el, index, $list)=>
+            {
+                const value = $el.text()
+                var res = value.split(" ")
+                res = res[1].trim()
+                total = Number(res)
+                expect(total).to.equal(sum)
+            })
+            
             checkoutpage.getcheckout().click()
 
             purchasepage.getcountry().type('India')
