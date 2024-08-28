@@ -5,3 +5,6 @@
 5. Navigating to URL -visit
 6. Through command line, cypress runs in headless mode in electron
 
+error1. > process is not defined
+const env = process.env
+soltn: Javascript keyword import cypress line defaultly added.

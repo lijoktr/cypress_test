@@ -2,6 +2,8 @@
     import Homepage from "../Pageobjects/Homepage"    
     import Productpage from "../Pageobjects/Productpage"
     import Checkoutpage from "../Pageobjects/Checkoutpage"
+    import Purchasepage from "../Pageobjects/Purchasepage"
+    
 
             describe('framework', function()
             {
@@ -13,9 +15,12 @@
         })
 
         it('framwework part ', function() {
+            
             const homepage = new Homepage()
             const productpage = new Productpage()
             const checkoutpage = new Checkoutpage()
+            const purchasepage = new Purchasepage()
+
             cy.visit("https://rahulshettyacademy.com/angularpractice/")   
             homepage.getnamebox().type(this.data.name)
             homepage.getgender().select(this.data.gender)
@@ -35,6 +40,18 @@
 
             productpage.getkart().click()
             checkoutpage.getcheckout().click()
+
+            purchasepage.getcountry().type('India')
+            purchasepage.getcountryselect().click()
+            purchasepage.getterm().click()
+            purchasepage.getpurchase().click()
+            purchasepage.getsuccess().then(function(successtext)
+        {
+            const success_text = successtext.text()
+            expect(success_text.includes('Success')).to.be.true
+
+        })
+
 
         })
         })
