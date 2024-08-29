@@ -12,6 +12,7 @@
     "cypress": "^13.13.3"
   },
   "devDependencies": {
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }

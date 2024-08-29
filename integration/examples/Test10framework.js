@@ -15,7 +15,7 @@
             })
         })
 
-        it('framwework part ', function() {
+        it('Ecommerce purchase', function() {
 
             var sum = 0
             var total = 0
@@ -42,7 +42,7 @@
             })
 
             productpage.getkart().click()
-            cy.get('tr td:nth-child(4) strong').each(($el, index, $list)=>
+            checkoutpage.getindividualamount().each(($el, index, $list)=>
             {
                 const value = $el.text()
                 var res = value.split(" ")
@@ -53,7 +53,7 @@
             cy.log(sum)
 
         })
-        cy.get('h3 strong').each(($el, index, $list)=>
+        checkoutpage.gettotalamount().each(($el, index, $list)=>
             {
                 const value = $el.text()
                 var res = value.split(" ")
