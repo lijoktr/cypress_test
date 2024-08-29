@@ -3,6 +3,11 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   defaultCommandTimeout: 8000,
+  retries: {
+    runMode: 1,// runs if failed test
+ 
+  },
+  projectId: "q5bj3o", // cloud report
   reporter: 'cypress-mochawesome-reporter',
   video: true,
   env:{

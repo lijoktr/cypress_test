@@ -67,7 +67,7 @@
             purchasepage.getcountry().type('India')
             
             purchasepage.getcountryselect().click()
-            purchasepage.getterm().click()
+            purchasepage.getterm().click({force: true})
             purchasepage.getpurchase().click()
             purchasepage.getsuccess().then(function(successtext)
         {

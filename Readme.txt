@@ -3,7 +3,7 @@ Steps to Run the code:
 2. Terminal command:.\node_modules\.bin\cypress open
 3. Select E2E testing
 4. Select browser
-3. Run each test in Specs
+5. Run each test in Specs
 
 Best practice in building cypress framework
 1. Setting up test hooks
@@ -22,6 +22,13 @@ Notes
 4. If jquery, first resolve it using .then(function(price))
 5. Through command line, cypress runs in headless mode in electron
 6. command run: npx Cypress run --spec C:\Users\lijom\Cypress\cypress_test\integration\examples\Test10framework.js --headed --browser chrome --env url="https://google.com"
+7. adding mochawsome reporter locally: https://www.npmjs.com/package/cypress-mochawesome-reporter
+8. Report generation Cypress in cloud: 
+    a. login cypress cloud
+    b. Copy paste project id in cypress.config.js
+    c. command: npx Cypress run --record --key c77b3857-35e2-4d93-8410-21130c2e6e64
+9.
+
 
 error1. > process is not defined
 const env = process.env
