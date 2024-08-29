@@ -4,9 +4,9 @@
 describe('my first test', function()
 {
     it('first test case ', function() {
-        cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
+        cy.visit(Cypress.env('url')+"/seleniumPractise/#/")
         cy.get('.search-keyword').type('ca')
-        cy.wait(2000)
+        
 
         cy.get('.products').as('productlocator')
         cy.get('.Product:visible').should('have.length',4)

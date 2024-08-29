@@ -1,4 +1,4 @@
-        /// <reference types= "cypress"/>
+/// <reference types= "cypress"/>
 
 
         describe('calendar', function()
@@ -9,7 +9,8 @@
                 const day = '24'
                 const year = '2022'
                 const exp = [month,day,year]
-                cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/offers")
+                
+                cy.visit(Cypress.env('url')+"/seleniumPractise/#/offers")
                 cy.get("div[class*='react-date-picker__wrapper'] button:nth-child(3)").click()
                 cy.get("span[class*='react-calendar__navigation__label']").click()
                 cy.get("span[class*='react-calendar__navigation__label']").click()

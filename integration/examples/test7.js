@@ -5,7 +5,7 @@
             it('first test case ', function() {
 
                 //
-                cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+                cy.visit(Cypress.env('url')+"/AutomationPractice/")
 
                 cy.get('#opentab').then(function(e1)
             {

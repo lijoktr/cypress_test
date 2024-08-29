@@ -5,7 +5,7 @@
             it('first test case ', function() {
 
                 //checkbox
-                cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+                cy.visit(Cypress.env('url')+"/AutomationPractice/")
                 cy.get('#alertbtn').click()
 
                     cy.on('window:alert',(str) => {
