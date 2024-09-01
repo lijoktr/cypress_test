@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "Test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx cypress run",
+    "headtest": "npx cypress run --headed",
+    "chrometest": "npx cypress run --browser chrome",
+    "test8filetest": "npx cypress run --spec \"./integration/examples/test8.js\"",
+    "recorddashboardtest": "npx Cypress run --record --key c77b3857-35e2-4d93-8410-21130c2e6e64"
   },
   "author": "",
   "license": "ISC",
