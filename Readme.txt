@@ -33,3 +33,41 @@ Notes
 error1. > process is not defined
 const env = process.env
 soltn: Javascript keyword import cypress line defaultly added.
+
+
+cucumber installation (refer: https://github.com/badeball/cypress-cucumber-preprocessor)
+1. npm install @badeball/cypress-cucumber-preprocessor
+2. Register in setupnodeevents: 
+async function setupNodeEvents(on, config) {
+  // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
+  await addCucumberPreprocessorPlugin(on, config);
+
+  on("file:preprocessor", preprocessor(config));
+
+  // Make sure to return the config object as it might have been modified by the plugin.
+  return config;
+}
+
+3. add setupNodeEvents, in e2e.
+4. import browserify and preprocessor: 
+const {
+  addCucumberPreprocessorPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor");
+const {
+  preprocessor,
+} = require("@badeball/cypress-cucumber-preprocessor/browserify");
+
+5. add dependency in package.json: 
+   "@cypress/browserify-preprocessor": "latest",
+
+6. change specpattern in config:
+specPattern: './integration/examples/BDD/*.feature',
+
+7. download plugin for .feature extension: cucumber gherkin full support from google 
+
+error1: (0 , _cypressCucumberPreprocessor.And) is not a function
+
+Soltn: Replaced And in feature file with 'When'
+If you're using And, it's just syntactic sugar and typically you can replace And with Given, When, or Then (whichever is appropriate for your step). 
+
+
